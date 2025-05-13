@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>SakuraVibes - Postal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/japan-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Load map styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+<!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+
+    <style>
+        .img-option-selected {
+            border: 3px solid #28a745;
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Contenedor de alerta para el lector de pantalla -->
+    <div id="screen-alert" aria-live="polite" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; clip: rect(1px, 1px, 1px, 1px);">
+    </div>
+        
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+                SakuraVibes
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Mostrar u ocultar el menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="postal.html">Postal</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="sound-toggle" class="btn btn-success">Silenciar sonido</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Start Content Page -->
+    <div class="container-fluid bg-light py-5">
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Cree su postal</h1>
+            <p>
+                Introduzca los datos necesarios y se enviará la postal a la persona de su elección (según el email escrito).
+            </p>
+        </div>
+    </div>
+
+    <!-- Start Contact -->
+    <div class="container py-5">
+        <div class="row py-5">
+            <form class="col-md-9 m-auto" method="post" role="form">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="name">Nombre <span aria-hidden="true">*</span></label>
+                        <input type="text" class="form-control mt-1" id="name" name="name" placeholder="Introduzca el nombre" required aria-required="true">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="email">Email <span aria-hidden="true">*</span></label>
+                        <input type="email" class="form-control mt-1" id="email" name="email" placeholder="Introduzca el email" required aria-required="true">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="subject">Título <span aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control mt-1" id="subject" name="subject" placeholder="Introduzca el título" required aria-required="true">
+                </div>
+                <div class="mb-3">
+                    <label for="message">Mensaje <span aria-hidden="true">*</span></label>
+                    <textarea class="form-control mt-1" id="message" name="message" placeholder="Introduzca el mensaje" rows="8" required aria-required="true"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <fieldset>
+                        <legend class="form-label">Seleccione una imagen para su postal: <span aria-hidden="true">*</span></legend>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div>
+                                <input type="radio" name="postal_image" id="img1" value="banner_img_01.jpg" class="d-none" required aria-required="true" checked>
+                                <label for="img1" tabindex="0">
+                                    <img src="./assets/img/banner_img_01.jpg" alt="Templo" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="postal_image" id="img2" value="banner_img_02.jpg" class="d-none" required aria-required="true">
+                                <label for="img2" tabindex="0">
+                                    <img src="./assets/img/banner_img_02.jpg" alt="Calle tradicional" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="postal_image" id="img3" value="banner_img_03.jpg" class="d-none" required aria-required="true">
+                                <label for="img3" tabindex="0">
+                                    <img src="./assets/img/banner_img_03.jpg" alt="Cerezos en flor" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="postal_image" id="img4" value="postal_1.jpg" class="d-none" required aria-required="true">
+                                <label for="img4" tabindex="0">
+                                    <img src="./assets/img/postal_1.jpg" alt="Ciudad concurrida" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="postal_image" id="img5" value="postal_2.jpg" class="d-none" required aria-required="true">
+                                <label for="img5" tabindex="0">
+                                    <img src="./assets/img/postal_2.jpg" alt="Lago con montaña al fondo" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="postal_image" id="img6" value="postal_3.jpg" class="d-none" required aria-required="true">
+                                <label for="img6" tabindex="0">
+                                    <img src="./assets/img/postal_3.jpg" alt="Templo con montaña al fondo" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                            <div>
+                                <input type="radio" name="postal_image" id="img7" value="postal_4.jpg" class="d-none" required aria-required="true">
+                                <label for="img7" tabindex="0">
+                                    <img src="./assets/img/postal_4.jpg" alt="Río con cerezos en flor" class="img-thumbnail" style="width: 300px; cursor: pointer;">
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="row">
+                    <div class="col text-end mt-2">
+                        <button type="submit" aria-label="Enviar postal" class="btn btn-success btn-lg px-3">Enviar</button>
+                    </div>
+                </div>                
+            </form>
+        </div>
+    </div>
+    <!-- End Contact -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <script src="assets/js/main.js"></script>
+    
+
+
+</body>
+
+</html>

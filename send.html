@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>SakuraVibes - Enviado</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="assets/img/japan-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
+    <!-- Load map styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+</head>
+
+<body>
+    <!-- Contenedor de alerta para el lector de pantalla -->
+    <div id="screen-alert" aria-live="polite" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; clip: rect(1px, 1px, 1px, 1px);">
+        La postal se ha enviado correctamente.
+    </div>
+        
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html" id="home-button">
+                SakuraVibes
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Mostrar u ocultar el menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" id="home-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="postal.html" id="postal-link">Postal</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="sound-toggle" class="btn btn-success">Silenciar sonido</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Start Content Page -->
+    <div class="container-fluid bg-light py-5">      
+        <div class="col-md-6 m-auto text-center">
+            <h1 class="h1">Envío correcto</h1>
+            <p>
+                La postal se ha enviado correctamente.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col text-center mt-2">
+                <a href="index.html" role="button" aria-label="Volver a la página de inicio" id="back-to-home" class="btn btn-success btn-lg px-3">Volver a Inicio</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
