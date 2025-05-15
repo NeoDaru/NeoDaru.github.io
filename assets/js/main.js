@@ -1,10 +1,11 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const sound = new Audio('assets/sounds/click-sound.mp3');
     
     // Verifica si el sonido está silenciado al cargar la página
     const soundToggleButton = document.getElementById('sound-toggle');
-    let isMuted = localStorage.getItem('isMuted') === 'true'; // Estado inicial
+    let isMuted = localStorage.getItem('isMuted') === 'true';
 
     // Función para actualizar el estado del botón y el audio
     function updateSoundState() {
